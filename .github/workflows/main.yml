@@ -8,6 +8,10 @@ jobs:
         run: |
           echo "Heeloo world"
           echo "try success"
+      - name: Create a dummy log file
+        run: |
+            mkdir -p logs
+            echo "This is a sample log file." > logs/app.log
       - name: Get build artifacts
         uses: actions/upload-artifact@v3
         with:
