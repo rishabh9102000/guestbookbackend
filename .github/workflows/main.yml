@@ -3,8 +3,13 @@ on: workflow_dispatch
 jobs:
   first-job:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: Print greeting
-        run: | 
-            echo "Heeloo world"
-            echo "try success"
+        run: |
+          echo "Heeloo world"
+          echo "try success"
+      - name: Get build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: logs
+          path: logs
